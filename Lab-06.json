@@ -1,0 +1,28 @@
+$(function(){
+    $("img").click(function(){
+    var c = $(this).attr("src");
+    if(c == "bulb_on.jpg"){
+        $(this).attr("src","bulb_off.jpg");
+    }
+    else{
+        $(this).attr("src","bulb_on.jpg");
+    }
+    });
+    $("input[type=text]").keyup(function () {  
+        $(this).val($(this).val().toUpperCase());  
+    });
+    $("#number1").keyup(function(){
+        
+        var a = parseInt($(this).val());
+        var b = parseInt($("#number2").val());
+        var sum = a + b;
+        $("#screen").val(sum);
+        
+    });
+    $("#number2").keyup(function(){
+        var a = parseInt($("#number1").val());
+        var b = parseInt($(this).val());
+        var sum = a + b;
+        $("#screen").val(sum);
+    });
+});
